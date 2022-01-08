@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  Hello Everyone
+  <script type="text/javascript">
+    /* ----------- different primitive data types --------------- */
+    const variable1 = 1; // number
+    const variable2 = 'some text'; // string
+    const variable3 = true; // boolean
+    const variable4 = undefined; // undefined
+    const variable5 = null; // null
+
+    /* ----------- different reference data types --------------- */
+    const variable6 = {}; // object
+    const variable7 = []; // array
+    const variable8 = function () { }; // function
+
+    /* ----------- variable declarations --------------- */
+    const constant = 1; // constant variable.
+    let scopedVariable = 2; // block scoped variable declaration.
+    var scopedVariable2 = 3; // function block scoped variable declaration.
+
+    /* ----------- conditional statements --------------- */
+    // first approach
+    if (condition) { }
+    else { }
+
+    // second approach
+    if (condition) { }
+    else if (second_condition) { }
+    else { }
+
+    /* ----------- loops --------------- */
+    
+    while (condition) {
+      // some code here
+    }
+    
+    for (let index = 0; index < array.length; index++) {
+      // some code here
+    }
+    
+    do {
+      // some code here
+    } while (condition);
+    
+    /* ----------- Arrays --------------- */
+    const array = []; // array declaration
+    [].length; // the length property of an array
+
+    // array methods
+    [].push(item); // adds element to end of array
+    [].shift(item); // remove element from start of array
+    [].unshift(item); // adds element to start of array
+    [].indexOf(item); // get the index of an item in the array. returns -1 if it doesnt exist
+    [].slice(start, end); // get a slice of an array from start to end. the end index is not included in the slice
+    [].splice(start, end, replace_with_this_item);// removes a slice of an array from start to end. the end index is not included in the slice
+    ['sdfsd', 'ffd', 'aaac', 'vv', 'b',].filter((value) => { return value.includes('a') }); // filter an array based on a condition
+    [].forEach(callback); // loop over the elements of an array
+    [].map(callback); // map over the elements of an array
+    [].sort(callback); // sort the element of an array based on a condition
+    [].reverse(); // reverse the order of the array
+    [].includes(item); // checks if item is included in the array.
+
+
+    /* ----------- functions --------------- */
+
+    function myFunc() { } // a function declaration
+    let func = function () { }; // a function expression
+    let func1 = (a, b, c) => { // a function expression with arrow function.
+      // somecode
+    }
+    (function (a, b, c, d) { })(1, '', [], {}); // immediatly invoked function expression (IIFE)
+
+    /* ----------- objects --------------- */
+    let obj1 = {};
+    let obj2 = new Object();
+    let obj3 = Object.create({});
+
+    function Identity() { // a constructor function for objects
+      this.firstName = 'Ibrahim';
+    }
+
+    let obj4 = new Identity();
+
+    obj1.lastname = 'Voldmort'; // assign new property to object with a value
+    obj1['lastname']; // access or create a property in the object
+
+    
+
+  </script>
+</body>
+
+</html>
