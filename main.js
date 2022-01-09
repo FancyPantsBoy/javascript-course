@@ -1,79 +1,67 @@
-var calculator = (function () {
-  function HistoryEntry(val1, val2, op, result) {
-    this.value1 = val1;
-    this.value2 = val2;
-    this.operation = op;
-    this.result = result;
-  }
+// const mainContent = document.getElementById('main-content');
+const button = document.getElementById('add-btn');
 
+const callback = function () {
+  console.log('clicked');
+}
+
+const callback2 = function () {
+  alert('click');
+}
+
+button.addEventListener('click', callback);
+button.addEventListener('click', callback2);
+
+button.removeEventListener('click', callback)
+
+
+// // console.log(button);
+// // console.log(mainContent);
+
+// function createArticle(article_name, description, author) {
+//   // create a container element
+//   const mainElement = document.createElement('div');
+//   mainElement.classList.add('content-element'); // add class 'content-element' to container div
+
+//   // create a paragraph element for article name
+//   const articleElement = document.createElement('p');
+//   articleElement.innerText = article_name; // add text to paragraph
+
+//   // create a paragraph element for description
+//   const descriptionElement = document.createElement('p');
+//   descriptionElement.innerText = description; // add text to paragraph
+
+//   // create a paragraph element for author
+//   const authorElement = document.createElement('p');
+//   authorElement.innerText = author; // add text to paragraph
+
+//   mainElement.appendChild(articleElement)
+//   mainElement.appendChild(descriptionElement)
+//   mainElement.appendChild(authorElement)
+
+//   return mainElement;
+// }
+
+
+// button.addEventListener('click', (ev) => {
+//   const newArticle = createArticle('something', 'just a description', 'me');
+//   mainContent.appendChild(newArticle);
+// });
+
+// $(document).ready(() => {
+//   // alert('page loaded');
+//   $('#main-content').css({
+//     backgroundColor: 'red'
+//   });
+
+//   $('#info-btn').click(function () {
+//     $('.content-element').animate({
+//       left: '250px',
+//       opacity: '0.5',
+//       height: '150px'
+//   });
+//   });
   
-  const history = [
-    /*
-      {
-        value1 : 1,
-        operation: '+',
-        value2 : 4,
-        result: 5
-      }
-    */
-  ];
+// })
 
-  let addToHistory = (value1, op, value2, result) => {
-    const entry = new HistoryEntry(value1, value2, op, result);
-    history.push(entry);
-  }
-  
-  let add = (a, b) => {
-    const result = a + b;
-    addToHistory(a, '+', b, result)
-    return result
-  }
-  let substract = (a, b) => {
-    const result = a - b;
-    addToHistory(a, '-', b, result)
-    return result
-  }
-  let multiply = (a, b) => {
-    const result = a * b;
-    addToHistory(a, '*', b, result)
-    return result
-  }
-  let divide = (a, b) => {
-    const result = a + b;
-    addToHistory(a, '/', b, result)
-    return result
-  }
-  let getHistory = () => {
-    history.forEach((item, index) => {
-      console.log(`operation ${index + 1}: ${item.value1} ${item.operation} ${item.value2} = ${item.result}`);
-    })
-  }
-  return {
-    add,
-    substract,
-    multiply,
-    divide,
-    getHistory
-  }
-})();
 
-// 1 - be able to execute different basic mathematical operations.
-// 2 - keep a history of previous operations.
-
-calculator.add(1, 2);
-calculator.substract(1, 2);
-calculator.divide(1, 2);
-calculator.multiply(1, 2);
-
-calculator.getHistory();
-
-calculator.multiply(2, 3);
-console.log('--------------------------');
-calculator.getHistory();
-
-/*
-  1 + 2 = 3
-  1 - 2 = -1
-  1 / 2 = 0.5
-  1 * 2 = 2
-*/
